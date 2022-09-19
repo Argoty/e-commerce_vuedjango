@@ -33,7 +33,7 @@
                 <span class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </span>
-                <span>Cart</span>
+                <span>Cart ({{ cartTotalLenght }})</span>
               </router-link>
             </div>
           </div>
@@ -56,7 +56,26 @@ export default {
   name: 'App',
   data() {
     return {
-      showMobileMenu: false
+      showMobileMenu: false,
+      cart: {
+        items: [
+
+        ]
+      }
+    }
+  },
+
+  beforeCreate() {
+    this.$store.commit("initializeStore");
+  },
+  mounted() {
+    this.cart = this.$store.state.cart;
+  },
+  computed: {
+    cartTotalLenght() {
+      let totalLenght = 0;
+      this.cart.items.forEach(i => totalLenght += i.quantity);
+      return totalLenght;
     }
   }
 }
