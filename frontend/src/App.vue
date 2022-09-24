@@ -58,11 +58,11 @@
               <router-link to="/log-in" class="button is-light"
                 >Log in</router-link
               >
-              <router-link to="/cart" class="button is-success">
+              <router-link to='/cart' class="button is-success">
                 <span class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </span>
-                <span>Cart ({{ cartTotalLenght }})</span>
+                <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default {
     this.cart = this.$store.state.cart;
   },
   computed: {
-    cartTotalLenght() {
+    cartTotalLength() {
       let totalLenght = 0;
       this.cart.items.forEach((i) => (totalLenght += i.quantity));
       return totalLenght;
