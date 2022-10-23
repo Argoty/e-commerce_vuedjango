@@ -12,6 +12,8 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = env("DEBUG")
 
+STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
+
 ALLOWED_HOSTS = []
 
 
@@ -25,6 +27,7 @@ INSTALLED_APPS = [
 
     "core",
     "product",
+    "order",
 
     "rest_framework",
     "rest_framework.authtoken",

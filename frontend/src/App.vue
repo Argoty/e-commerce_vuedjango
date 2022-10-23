@@ -55,7 +55,10 @@
 
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/log-in" class="button is-light"
+              <router-link v-if="$store.state.isAuthenticated" to="/my-account" class="button is-light"
+                >My Account</router-link
+              >
+              <router-link v-else to="/log-in" class="button is-light"
                 >Log in</router-link
               >
               <router-link to='/cart' class="button is-success">
